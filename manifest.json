@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "baseURL": "https://raw.githubusercontent.com/krissss/tray-pulsy-skins/main/skins",
+  "skins": [
+    {
+      "id": "runcat",
+      "author": "Kyome22",
+      "source_from": "https://github.com/Kyome22/RunCat365",
+      "frames": [
+        "runcat_0.png",
+        "runcat_1.png",
+        "runcat_2.png",
+        "runcat_3.png",
+        "runcat_4.png"
+      ]
+    },
+    {
+      "id": "runcat_u",
+      "author": "shenbo",
+      "source_from": "https://github.com/shenbo/runcat-pyqt5-win",
+      "frames": [
+        "0.png",
+        "1.png",
+        "2.png",
+        "3.png",
+        "4.png"
+      ]
+    },
+    {
+      "id": "dab",
+      "author": "chux0519",
+      "source_from": "https://github.com/chux0519/runcat-tray",
+      "frames": [
+        "dab00.png",
+        "dab01.png",
+        "dab02.png",
+        "dab03.png",
+        "dab04.png",
+        "dab05.png",
+        "dab06.png",
+        "dab07.png",
+        "dab08.png"
+      ]
+    },
+    {
+      "id": "horse",
+      "author": "Kyome22",
+      "source_from": "https://github.com/Kyome22/RunCat365",
+      "frames": [
+        "horse_0.png",
+        "horse_1.png",
+        "horse_2.png",
+        "horse_3.png",
+        "horse_4.png"
+      ]
+    },
+    {
+      "id": "mario",
+      "author": "shenbo",
+      "source_from": "https://github.com/shenbo/runcat-pyqt5-win",
+      "frames": [
+        "0.png",
+        "1.png",
+        "2.png"
+      ]
+    },
+    {
+      "id": "mona",
+      "author": "chux0519",
+      "source_from": "https://github.com/chux0519/runcat-tray",
+      "frames": [
+        "mona0.png",
+        "mona1.png",
+        "mona2.png",
+        "mona3.png",
+        "mona4.png",
+        "mona5.png",
+        "mona6.png"
+      ]
+    },
+    {
+      "id": "parrot",
+      "author": "Kyome22",
+      "source_from": "https://github.com/Kyome22/RunCat365",
+      "frames": [
+        "parrot_0.png",
+        "parrot_1.png",
+        "parrot_2.png",
+        "parrot_3.png",
+        "parrot_4.png",
+        "parrot_5.png",
+        "parrot_6.png",
+        "parrot_7.png",
+        "parrot_8.png",
+        "parrot_9.png"
+      ]
+    },
+    {
+      "id": "partyblobcat",
+      "author": "chux0519",
+      "source_from": "https://github.com/chux0519/runcat-tray",
+      "frames": [
+        "partyblobcat00.png",
+        "partyblobcat01.png",
+        "partyblobcat02.png",
+        "partyblobcat03.png",
+        "partyblobcat04.png",
+        "partyblobcat05.png",
+        "partyblobcat06.png",
+        "partyblobcat07.png",
+        "partyblobcat08.png",
+        "partyblobcat09.png"
+      ]
+    },
+    {
+      "id": "points",
+      "author": "shenbo",
+      "source_from": "https://github.com/shenbo/runcat-pyqt5-win",
+      "frames": [
+        "1.png",
+        "2.png",
+        "3.png",
+        "4.png",
+        "5.png",
+        "6.png",
+        "7.png",
+        "8.png"
+      ]
+    }
+  ]
+}
