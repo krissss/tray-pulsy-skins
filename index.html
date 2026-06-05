@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TrayPulsy Skins</title>
+    <meta
+      name="description"
+      content="Preview the online PNG skin catalog for TrayPulsy."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-copy">
+        <p class="eyebrow">TrayPulsy skin catalog</p>
+        <h1>Preview every tray animation before installing it.</h1>
+      </div>
+      <dl class="stats" aria-label="Catalog summary">
+        <div>
+          <dt id="skin-count">0</dt>
+          <dd>skins</dd>
+        </div>
+        <div>
+          <dt id="frame-count">0</dt>
+          <dd>frames</dd>
+        </div>
+        <div>
+          <dt id="author-count">0</dt>
+          <dd>authors</dd>
+        </div>
+      </dl>
+    </header>
+
+    <main>
+      <section class="toolbar" aria-label="Preview controls">
+        <label class="search-field">
+          <span>Search</span>
+          <input
+            id="search"
+            type="search"
+            autocomplete="off"
+            placeholder="id, author, source"
+          >
+        </label>
+
+        <label class="speed-control">
+          <span>
+            Metric load
+            <output id="speed-value" for="speed">20% / 16fps</output>
+          </span>
+          <input
+            id="speed"
+            type="range"
+            min="0"
+            max="100"
+            step="1"
+            value="20"
+          >
+        </label>
+
+        <button type="button" id="play-toggle" class="toggle-button" aria-pressed="false">
+          Pause
+        </button>
+      </section>
+
+      <section id="skin-grid" class="skin-grid" aria-live="polite"></section>
+
+      <p id="empty-state" class="empty-state" hidden>
+        No skins match this search.
+      </p>
+
+      <section class="page-actions" aria-label="App and contribution links">
+        <article>
+          <p class="action-kicker">TrayPulsy app</p>
+          <h2>Need the menu bar app?</h2>
+          <p>
+            Install TrayPulsy, then use this catalog to choose an online PNG skin.
+          </p>
+          <nav class="action-links" aria-label="App links">
+            <a href="https://github.com/krissss/tray-pulsy" target="_blank" rel="noreferrer">
+              Repository
+            </a>
+            <a href="https://github.com/krissss/tray-pulsy/releases" target="_blank" rel="noreferrer">
+              Releases
+            </a>
+          </nav>
+        </article>
+
+        <article>
+          <p class="action-kicker">Contribute</p>
+          <h2>Add a skin to the catalog.</h2>
+          <p>
+            Add PNG frames under <code>skins/&lt;skin-id&gt;/</code>, update
+            <code>manifest.json</code>, then open a pull request.
+          </p>
+          <nav class="action-links" aria-label="Contribution links">
+            <a href="https://github.com/krissss/tray-pulsy-skins" target="_blank" rel="noreferrer">
+              Skin repo
+            </a>
+            <a href="https://github.com/krissss/tray-pulsy-skins/pulls" target="_blank" rel="noreferrer">
+              Pull requests
+            </a>
+          </nav>
+        </article>
+      </section>
+    </main>
+
+    <template id="skin-card-template">
+      <article class="skin-card">
+        <div class="preview-stage">
+          <div class="pixel-plane">
+            <img alt="">
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="card-title-row">
+            <h2></h2>
+            <span class="frame-pill"></span>
+          </div>
+
+          <dl class="metadata">
+            <div>
+              <dt>Author</dt>
+              <dd class="author"></dd>
+            </div>
+            <div>
+              <dt>Source</dt>
+              <dd><a class="source" target="_blank" rel="noreferrer">Open</a></dd>
+            </div>
+          </dl>
+
+        </div>
+      </article>
+    </template>
+
+    <script src="preview.js" defer></script>
+  </body>
+</html>
