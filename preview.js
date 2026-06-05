@@ -3,7 +3,7 @@ const state = {
   cards: [],
   metricLoad: 20,
   playing: true,
-  lastTick: 0,
+  timerId: null,
 };
 
 const grid = document.querySelector("#skin-grid");
@@ -28,7 +28,7 @@ async function init() {
     renderStats(state.skins);
     renderCards(state.skins);
     bindControls();
-    requestAnimationFrame(tick);
+    scheduleNextFrame();
   } catch (error) {
     grid.innerHTML = `<p class="empty-state">Unable to load manifest.json.</p>`;
     console.error(error);
@@ -111,10 +111,13 @@ function applySearch() {
   emptyState.hidden = visibleCount > 0;
 }
 
-function tick(now) {
-  const frameMs = computeFrameMs(state.metricLoad);
+function scheduleNextFrame() {
+  window.clearTimeout(state.timerId);
+  state.timerId = window.setTimeout(advanceFrames, computeFrameMs(state.metricLoad));
+}
 
-  if (state.playing && now - state.lastTick >= frameMs) {
+function advanceFrames() {
+  if (state.playing) {
     state.cards.forEach((card) => {
       if (card.node.classList.contains("is-hidden") || card.frames.length <= 1) {
         return;
@@ -123,10 +126,9 @@ function tick(now) {
       card.index = (card.index + 1) % card.frames.length;
       card.image.src = card.frames[card.index];
     });
-    state.lastTick = now;
   }
 
-  requestAnimationFrame(tick);
+  scheduleNextFrame();
 }
 
 function computeFrameMs(metricLoad) {
