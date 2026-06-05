@@ -69,6 +69,7 @@ function renderCards(skins) {
     source.textContent = skin.source_from;
     image.alt = `${skin.id} animation preview`;
     image.src = localFrames[0];
+    const preloadedFrames = preloadFrames(localFrames);
 
     grid.append(node);
 
@@ -76,6 +77,7 @@ function renderCards(skins) {
       node,
       image,
       frames: localFrames,
+      preloadedFrames,
       index: 0,
     };
   });
@@ -123,8 +125,14 @@ function advanceFrames() {
         return;
       }
 
-      card.index = (card.index + 1) % card.frames.length;
-      card.image.src = card.frames[card.index];
+      const nextIndex = (card.index + 1) % card.frames.length;
+      const nextFrame = card.preloadedFrames[nextIndex];
+      if (!nextFrame.complete || nextFrame.naturalWidth === 0) {
+        return;
+      }
+
+      card.index = nextIndex;
+      card.image.src = nextFrame.src;
     });
   }
 
@@ -145,4 +153,13 @@ function updateMetricOutput() {
 
 function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
+}
+
+function preloadFrames(frames) {
+  return frames.map((frame) => {
+    const image = new Image();
+    image.decoding = "async";
+    image.src = frame;
+    return image;
+  });
 }
