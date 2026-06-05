@@ -126,6 +126,17 @@
         "7.png",
         "8.png"
       ]
+    },
+    {
+      "id": "elf-basic-atk",
+      "author": "pixlab24",
+      "source_from": "https://pixlab24.com/character/37373/",
+      "frames": [
+        "00.png",
+        "01.png",
+        "02.png",
+        "03.png"
+      ]
     }
   ]
 }
